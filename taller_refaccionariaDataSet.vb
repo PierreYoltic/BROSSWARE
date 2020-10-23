@@ -3,3 +3,11 @@
 
     End Class
 End Class
+
+Namespace taller_refaccionariaDataSetTableAdapters
+    Partial Public Class showActiveClientsTableAdapter
+    End Class
+
+    Partial Public Class articuloTableAdapter
+    End Class
+End Namespace

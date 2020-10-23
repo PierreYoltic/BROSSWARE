@@ -5,37 +5,43 @@ Public Class EditArticulo
     Dim lector As SqlDataReader
     Dim idArticulo As Integer
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        BtnGuardar.Enabled = False
         Dim R As String
         Dim Servicio As Integer
+        Dim res = Articulos.BuscarClave(TxtClave.Text)
 
-
-        If CheckBoxServicio.Checked Then
-            Servicio = 1
+        If res <> 0 Then
+            Articulos.ValidarClaveExistente(TxtClave.Text, Me)
         Else
-            Servicio = 0
+            If CheckBoxServicio.Checked Then
+                Servicio = 1
+            Else
+                Servicio = 0
+            End If
+
+            R = "UPDATE articulo
+            SET clave='" & TxtClave.Text &
+                "', claveAlterna='" & TxtClaveAlterna.Text &
+                "', descripcion='" & TxtDescripcion.Text &
+                "', servicio=" & Servicio &
+                ", invMin=" & Val(NumMin.Value) &
+                ", invMax=" & Val(NumMax.Value) &
+                ", precioCompra=" & Val(TxtPrecioC.Text) &
+                ", precio1=" & Val(TxtPrecioV.Text) &
+                ", existencia=" & Val(NumExist.Value) &
+                ", caracteristicas='" & TxtCaracteristicas.Text &
+                "' WHERE art_id=" & idArticulo
+
+            comando.CommandText = R
+            comando.ExecuteNonQuery()
+            conexion.Close()
+
+            Articulos.Dispose()
+            FormMenu.AbrirFormInPanel(New Articulos())
+
+            Me.Dispose()
         End If
 
-        R = "UPDATE articulo
-            SET clave='" & TxtClave.Text &
-            "', claveAlterna='" & TxtClaveAlterna.Text &
-            "', descripcion='" & TxtDescripcion.Text &
-            "', servicio=" & Servicio &
-            ", invMin=" & Val(NumMin.Value) &
-            ", invMax=" & Val(NumMax.Value) &
-            ", precioCompra=" & Val(TxtPrecioC.Text) &
-            ", precio1=" & Val(TxtPrecioV.Text) &
-            ", existencia=" & Val(NumExist.Value) &
-            ", caracteristicas='" & TxtCaracteristicas.Text &
-            "' WHERE art_id=" & idArticulo
 
-        comando.CommandText = R
-        comando.ExecuteNonQuery()
-
-        Articulos.Dispose()
-        FormMenu.AbrirFormInPanel(New Articulos())
-
-        Me.Dispose()
     End Sub
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
@@ -51,8 +57,8 @@ Public Class EditArticulo
         lector = comando.ExecuteReader
         lector.Read()
         idArticulo = lector(0)
-
         lector.Close()
+
         Dim R As String = "Select A.clave, A.claveAlterna, A.descripcion, A.servicio, A.invMin, A.invMax, A.precioCompra, A.precio1, A.existencia, A.caracteristicas " &
                             "FROM articulo AS A " &
                             "WHERE A.art_id = " & idArticulo
@@ -80,6 +86,7 @@ Public Class EditArticulo
         TxtCaracteristicas.Text = lector(9)
 
         lector.Close()
+        conexion.Close()
 
     End Sub
 End Class

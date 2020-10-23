@@ -47,6 +47,8 @@ Partial Class AddCliente
         Me.TxtNumInt = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.TxtNumExt = New System.Windows.Forms.TextBox()
+        Me.BtnCancelar = New System.Windows.Forms.Button()
+        Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TxtComentario = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -57,8 +59,6 @@ Partial Class AddCliente
         Me.TxtClave = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -326,6 +326,40 @@ Partial Class AddCliente
         Me.TxtNumExt.Size = New System.Drawing.Size(128, 30)
         Me.TxtNumExt.TabIndex = 34
         '
+        'BtnCancelar
+        '
+        Me.BtnCancelar.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnCancelar.Font = New System.Drawing.Font("Century Gothic", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCancelar.ForeColor = System.Drawing.Color.Black
+        Me.BtnCancelar.Image = Global.MotoBox.My.Resources.Resources._074_bin
+        Me.BtnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnCancelar.Location = New System.Drawing.Point(467, 496)
+        Me.BtnCancelar.Name = "BtnCancelar"
+        Me.BtnCancelar.Padding = New System.Windows.Forms.Padding(90, 0, 0, 0)
+        Me.BtnCancelar.Size = New System.Drawing.Size(409, 48)
+        Me.BtnCancelar.TabIndex = 33
+        Me.BtnCancelar.Text = "        Cancelar"
+        Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnCancelar.UseVisualStyleBackColor = False
+        '
+        'BtnGuardar
+        '
+        Me.BtnGuardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnGuardar.Font = New System.Drawing.Font("Century Gothic", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnGuardar.ForeColor = System.Drawing.Color.White
+        Me.BtnGuardar.Image = Global.MotoBox.My.Resources.Resources._008_tick_mark
+        Me.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnGuardar.Location = New System.Drawing.Point(20, 496)
+        Me.BtnGuardar.Name = "BtnGuardar"
+        Me.BtnGuardar.Padding = New System.Windows.Forms.Padding(90, 0, 0, 0)
+        Me.BtnGuardar.Size = New System.Drawing.Size(409, 48)
+        Me.BtnGuardar.TabIndex = 2
+        Me.BtnGuardar.Text = "         Guardar"
+        Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnGuardar.UseVisualStyleBackColor = False
+        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -414,45 +448,11 @@ Partial Class AddCliente
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(332, 18)
+        Me.Label6.Location = New System.Drawing.Point(307, 18)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(225, 34)
+        Me.Label6.Size = New System.Drawing.Size(275, 34)
         Me.Label6.TabIndex = 15
-        Me.Label6.Text = "NUEVO CLIENTE"
-        '
-        'BtnCancelar
-        '
-        Me.BtnCancelar.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnCancelar.Font = New System.Drawing.Font("Century Gothic", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCancelar.ForeColor = System.Drawing.Color.Black
-        Me.BtnCancelar.Image = Global.MotoBox.My.Resources.Resources._074_bin
-        Me.BtnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnCancelar.Location = New System.Drawing.Point(467, 496)
-        Me.BtnCancelar.Name = "BtnCancelar"
-        Me.BtnCancelar.Padding = New System.Windows.Forms.Padding(90, 0, 0, 0)
-        Me.BtnCancelar.Size = New System.Drawing.Size(409, 48)
-        Me.BtnCancelar.TabIndex = 33
-        Me.BtnCancelar.Text = "        Cancelar"
-        Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnCancelar.UseVisualStyleBackColor = False
-        '
-        'BtnGuardar
-        '
-        Me.BtnGuardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnGuardar.Font = New System.Drawing.Font("Century Gothic", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnGuardar.ForeColor = System.Drawing.Color.White
-        Me.BtnGuardar.Image = Global.MotoBox.My.Resources.Resources._008_tick_mark
-        Me.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnGuardar.Location = New System.Drawing.Point(20, 496)
-        Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Padding = New System.Windows.Forms.Padding(90, 0, 0, 0)
-        Me.BtnGuardar.Size = New System.Drawing.Size(409, 48)
-        Me.BtnGuardar.TabIndex = 2
-        Me.BtnGuardar.Text = "         Guardar"
-        Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnGuardar.UseVisualStyleBackColor = False
+        Me.Label6.Text = "DATOS DEL CLIENTE"
         '
         'AddCliente
         '
