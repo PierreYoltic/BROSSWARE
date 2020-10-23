@@ -31,21 +31,20 @@ Partial Class Clientes
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.DataGridViewClientes = New System.Windows.Forms.DataGridView()
+        Me.Taller_refaccionariaDataSet = New MotoBox.taller_refaccionariaDataSet()
+        Me.ShowActiveClientsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ShowActiveClientsTableAdapter = New MotoBox.taller_refaccionariaDataSetTableAdapters.showActiveClientsTableAdapter()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ClaveDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CiudadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PaisDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ColoniaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Taller_refaccionariaDataSet = New MotoBox.taller_refaccionariaDataSet()
-        Me.ClienteTableAdapter = New MotoBox.taller_refaccionariaDataSetTableAdapters.clienteTableAdapter()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridViewClientes, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Taller_refaccionariaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ShowActiveClientsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -140,8 +139,8 @@ Partial Class Clientes
         Me.DataGridViewClientes.AutoGenerateColumns = False
         Me.DataGridViewClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewClientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ClaveDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.CiudadDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn, Me.PaisDataGridViewTextBoxColumn, Me.ColoniaDataGridViewTextBoxColumn, Me.MailDataGridViewTextBoxColumn})
-        Me.DataGridViewClientes.DataSource = Me.ClienteBindingSource
+        Me.DataGridViewClientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.ClaveDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.TelDataGridViewTextBoxColumn, Me.CelDataGridViewTextBoxColumn, Me.MailDataGridViewTextBoxColumn})
+        Me.DataGridViewClientes.DataSource = Me.ShowActiveClientsBindingSource
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 12.0!)
@@ -159,9 +158,31 @@ Partial Class Clientes
         Me.DataGridViewClientes.Size = New System.Drawing.Size(1032, 503)
         Me.DataGridViewClientes.TabIndex = 0
         '
+        'Taller_refaccionariaDataSet
+        '
+        Me.Taller_refaccionariaDataSet.DataSetName = "taller_refaccionariaDataSet"
+        Me.Taller_refaccionariaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ShowActiveClientsBindingSource
+        '
+        Me.ShowActiveClientsBindingSource.DataMember = "showActiveClients"
+        Me.ShowActiveClientsBindingSource.DataSource = Me.Taller_refaccionariaDataSet
+        '
+        'ShowActiveClientsTableAdapter
+        '
+        Me.ShowActiveClientsTableAdapter.ClearBeforeFill = True
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn1.MinimumWidth = 6
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
         'ClaveDataGridViewTextBoxColumn
         '
-        Me.ClaveDataGridViewTextBoxColumn.DataPropertyName = "clave"
+        Me.ClaveDataGridViewTextBoxColumn.DataPropertyName = "Clave"
         Me.ClaveDataGridViewTextBoxColumn.HeaderText = "Clave"
         Me.ClaveDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.ClaveDataGridViewTextBoxColumn.Name = "ClaveDataGridViewTextBoxColumn"
@@ -169,65 +190,35 @@ Partial Class Clientes
         '
         'NombreDataGridViewTextBoxColumn
         '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
         Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
         Me.NombreDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
         Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'CiudadDataGridViewTextBoxColumn
+        'TelDataGridViewTextBoxColumn
         '
-        Me.CiudadDataGridViewTextBoxColumn.DataPropertyName = "ciudad"
-        Me.CiudadDataGridViewTextBoxColumn.HeaderText = "Ciudad"
-        Me.CiudadDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.CiudadDataGridViewTextBoxColumn.Name = "CiudadDataGridViewTextBoxColumn"
-        Me.CiudadDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TelDataGridViewTextBoxColumn.DataPropertyName = "Tel"
+        Me.TelDataGridViewTextBoxColumn.HeaderText = "Tel"
+        Me.TelDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.TelDataGridViewTextBoxColumn.Name = "TelDataGridViewTextBoxColumn"
+        Me.TelDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'EstadoDataGridViewTextBoxColumn
+        'CelDataGridViewTextBoxColumn
         '
-        Me.EstadoDataGridViewTextBoxColumn.DataPropertyName = "estado"
-        Me.EstadoDataGridViewTextBoxColumn.HeaderText = "Estado"
-        Me.EstadoDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
-        Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PaisDataGridViewTextBoxColumn
-        '
-        Me.PaisDataGridViewTextBoxColumn.DataPropertyName = "pais"
-        Me.PaisDataGridViewTextBoxColumn.HeaderText = "Pais"
-        Me.PaisDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PaisDataGridViewTextBoxColumn.Name = "PaisDataGridViewTextBoxColumn"
-        Me.PaisDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ColoniaDataGridViewTextBoxColumn
-        '
-        Me.ColoniaDataGridViewTextBoxColumn.DataPropertyName = "colonia"
-        Me.ColoniaDataGridViewTextBoxColumn.HeaderText = "Colonia"
-        Me.ColoniaDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.ColoniaDataGridViewTextBoxColumn.Name = "ColoniaDataGridViewTextBoxColumn"
-        Me.ColoniaDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CelDataGridViewTextBoxColumn.DataPropertyName = "Cel"
+        Me.CelDataGridViewTextBoxColumn.HeaderText = "Cel"
+        Me.CelDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.CelDataGridViewTextBoxColumn.Name = "CelDataGridViewTextBoxColumn"
+        Me.CelDataGridViewTextBoxColumn.ReadOnly = True
         '
         'MailDataGridViewTextBoxColumn
         '
-        Me.MailDataGridViewTextBoxColumn.DataPropertyName = "mail"
+        Me.MailDataGridViewTextBoxColumn.DataPropertyName = "Mail"
         Me.MailDataGridViewTextBoxColumn.HeaderText = "Mail"
         Me.MailDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.MailDataGridViewTextBoxColumn.Name = "MailDataGridViewTextBoxColumn"
         Me.MailDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ClienteBindingSource
-        '
-        Me.ClienteBindingSource.DataMember = "cliente"
-        Me.ClienteBindingSource.DataSource = Me.Taller_refaccionariaDataSet
-        '
-        'Taller_refaccionariaDataSet
-        '
-        Me.Taller_refaccionariaDataSet.DataSetName = "taller_refaccionariaDataSet"
-        Me.Taller_refaccionariaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ClienteTableAdapter
-        '
-        Me.ClienteTableAdapter.ClearBeforeFill = True
         '
         'Clientes
         '
@@ -243,8 +234,8 @@ Partial Class Clientes
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         CType(Me.DataGridViewClientes, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Taller_refaccionariaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ShowActiveClientsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -256,15 +247,15 @@ Partial Class Clientes
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents DataGridViewClientes As DataGridView
+    Friend WithEvents CodigoPostalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Taller_refaccionariaDataSet As taller_refaccionariaDataSet
-    Friend WithEvents ClienteBindingSource As BindingSource
-    Friend WithEvents ClienteTableAdapter As taller_refaccionariaDataSetTableAdapters.clienteTableAdapter
+    Friend WithEvents ShowActiveClientsBindingSource As BindingSource
+    Friend WithEvents ShowActiveClientsTableAdapter As taller_refaccionariaDataSetTableAdapters.showActiveClientsTableAdapter
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents ClaveDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CiudadDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EstadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PaisDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CodigoPostalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ColoniaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TelDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CelDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents MailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

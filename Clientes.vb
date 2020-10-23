@@ -5,18 +5,11 @@ Public Class Clientes
     Dim lector As SqlDataReader
     Dim idCliente As Integer
     Private Sub Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'Taller_refaccionariaDataSet.cliente' table. You can move, or remove it, as needed.
-        Me.ClienteTableAdapter.Fill(Me.Taller_refaccionariaDataSet.cliente)
+        'TODO: This line of code loads data into the 'Taller_refaccionariaDataSet.showActiveClients' table. You can move, or remove it, as needed.
+        Me.ShowActiveClientsTableAdapter.Fill(Me.Taller_refaccionariaDataSet.showActiveClients)
 
         conexion.Open()
         comando = conexion.CreateCommand
-
-        comando.CommandText = "SELECT C.cli_id FROM cliente AS C WHERE C.clave='" & claveClienteSeleccionado & "'"
-        lector = comando.ExecuteReader
-        lector.Read()
-        idCliente = lector(0)
-        ''MsgBox(idCliente)
-        lector.Close()
 
     End Sub
 
@@ -26,6 +19,13 @@ Public Class Clientes
     End Sub
 
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
+
+        comando.CommandText = "SELECT C.cli_id FROM cliente AS C WHERE C.clave='" & claveClienteSeleccionado & "'"
+        lector = comando.ExecuteReader
+        lector.Read()
+        idCliente = lector(0)
+        lector.Close()
+
         EditCliente.StartPosition = FormStartPosition.CenterScreen
         EditCliente.ShowDialog()
     End Sub

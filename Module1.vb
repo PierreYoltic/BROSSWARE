@@ -1,5 +1,5 @@
 ﻿Module Module1
-    Public claveArticuloSeleccionado As String
-    Public claveClienteSeleccionado As String
-    Public claveProveedorSeleccionado As String
+    Public claveArticuloSeleccionado As String = vbNullString
+    Public claveClienteSeleccionado As String = vbNullString
+    Public claveProveedorSeleccionado As String = vbNullString
 End Module

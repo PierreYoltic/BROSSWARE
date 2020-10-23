@@ -22,6 +22,7 @@ Partial Class AddArticulos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtClave = New System.Windows.Forms.TextBox()
@@ -48,11 +49,16 @@ Partial Class AddArticulos
         Me.CheckBoxServicio = New System.Windows.Forms.CheckBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtDescripcion = New System.Windows.Forms.TextBox()
+        Me.ArticuloBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Taller_refaccionariaDataSet = New MotoBox.taller_refaccionariaDataSet()
+        Me.ArticuloTableAdapter = New MotoBox.taller_refaccionariaDataSetTableAdapters.articuloTableAdapter()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.NumExist, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumMax, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumMin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Taller_refaccionariaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -70,11 +76,11 @@ Partial Class AddArticulos
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(104, 18)
+        Me.Label6.Location = New System.Drawing.Point(62, 18)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(253, 34)
+        Me.Label6.Size = New System.Drawing.Size(303, 34)
         Me.Label6.TabIndex = 15
-        Me.Label6.Text = "NUEVO ARTICULO"
+        Me.Label6.Text = "DATOS DEL ARTICULO"
         '
         'TxtClave
         '
@@ -335,6 +341,20 @@ Partial Class AddArticulos
         Me.TxtDescripcion.Size = New System.Drawing.Size(386, 30)
         Me.TxtDescripcion.TabIndex = 5
         '
+        'ArticuloBindingSource
+        '
+        Me.ArticuloBindingSource.DataMember = "articulo"
+        Me.ArticuloBindingSource.DataSource = Me.Taller_refaccionariaDataSet
+        '
+        'Taller_refaccionariaDataSet
+        '
+        Me.Taller_refaccionariaDataSet.DataSetName = "taller_refaccionariaDataSet"
+        Me.Taller_refaccionariaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ArticuloTableAdapter
+        '
+        Me.ArticuloTableAdapter.ClearBeforeFill = True
+        '
         'AddArticulos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -352,6 +372,8 @@ Partial Class AddArticulos
         CType(Me.NumExist, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumMax, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumMin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Taller_refaccionariaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -382,4 +404,7 @@ Partial Class AddArticulos
     Friend WithEvents Label10 As Label
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnCancelar As Button
+    Friend WithEvents Taller_refaccionariaDataSet As taller_refaccionariaDataSet
+    Friend WithEvents ArticuloBindingSource As BindingSource
+    Friend WithEvents ArticuloTableAdapter As taller_refaccionariaDataSetTableAdapters.articuloTableAdapter
 End Class
