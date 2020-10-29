@@ -5,7 +5,8 @@ Public Class Articulos
     Dim lector As SqlDataReader
     Private Sub Articulos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Taller_refaccionariaDataSet.showActiveItems' table. You can move, or remove it, as needed.
-        Me.ShowActiveItemsTableAdapter.Fill(Me.Taller_refaccionariaDataSet.showActiveItems)
+        'Me.ShowActiveItemsTableAdapter.Fill(Me.Taller_refaccionariaDataSet.showActiveItems)
+        SqlDataAdapter1.Fill(Taller_refaccionariaDataSet.showActiveItems)
     End Sub
 
 
@@ -38,27 +39,23 @@ Public Class Articulos
             comando.ExecuteNonQuery()
 
 
-            ShowActiveItemsTableAdapter.Fill(Taller_refaccionariaDataSet.showActiveItems)
+            'ShowActiveItemsTableAdapter.Fill(Taller_refaccionariaDataSet.showActiveItems)
+            '
+            'DataGridViewArticulos
+            Taller_refaccionariaDataSet.showActiveItems.Clear()
+            SqlDataAdapter1.Fill(Taller_refaccionariaDataSet.showActiveItems)
             DataGridViewArticulos.DataSource = ShowActiveItemsBindingSource
-
             conexion.Close()
             claveArticuloSeleccionado = vbNullString
         End If
+
+        conexion.Close()
     End Sub
 
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
 
         AddArticulos.StartPosition = FormStartPosition.CenterScreen
         AddArticulos.ShowDialog()
-    End Sub
-
-    Private Sub SqlDataAdapter1_RowUpdated(sender As Object, e As SqlRowUpdatedEventArgs)
-        If e.Status = UpdateStatus.ErrorsOccurred Then
-            MessageBox.Show(e.Errors.Message & vbCrLf &
-                            e.Row.Item("Nombre", DataRowVersion.Original) & vbCrLf &
-                            e.Row.Item("Nombre", DataRowVersion.Current))
-            e.Status = UpdateStatus.SkipCurrentRow
-        End If
     End Sub
 
     Private Sub DataGridViewArticulos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewArticulos.CellClick
@@ -109,5 +106,21 @@ Public Class Articulos
             FormMenu.AbrirFormInPanel(New Articulos())
             form.Dispose()
         End If
+    End Sub
+
+    Private Sub SqlDataAdapter1_RowUpdated(sender As Object, e As SqlRowUpdatedEventArgs) Handles SqlDataAdapter1.RowUpdated
+        ''MsgBox("Si Existo")
+        If e.Status = UpdateStatus.ErrorsOccurred Then
+            MessageBox.Show(e.Errors.Message & vbCrLf &
+                            e.Row.Item("Descripcion", DataRowVersion.Original) & vbCrLf &
+                            e.Row.Item("Descripcion", DataRowVersion.Current))
+            e.Status = UpdateStatus.SkipCurrentRow
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        SqlDataAdapter1.Update(Taller_refaccionariaDataSet.showActiveItems)
+        Taller_refaccionariaDataSet.showActiveItems.Clear()
+        SqlDataAdapter1.Fill(Taller_refaccionariaDataSet.showActiveItems)
     End Sub
 End Class

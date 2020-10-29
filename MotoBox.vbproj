@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>15</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -125,10 +125,34 @@
     <Compile Include="Articulos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BuscarArticulo.Designer.vb">
+      <DependentUpon>BuscarArticulo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarArticulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarCliente.Designer.vb">
+      <DependentUpon>BuscarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CantidadArticulo.Designer.vb">
+      <DependentUpon>CantidadArticulo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CantidadArticulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Clientes.Designer.vb">
       <DependentUpon>Clientes.vb</DependentUpon>
     </Compile>
     <Compile Include="Clientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDescuento.Designer.vb">
+      <DependentUpon>FrmDescuento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDescuento.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditArticulo.Designer.vb">
@@ -154,6 +178,12 @@
     </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CambiarImporte.Designer.vb">
+      <DependentUpon>CambiarImporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CambiarImporte.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
@@ -186,6 +216,12 @@
     <Compile Include="taller_refaccionariaDataSet.vb">
       <DependentUpon>taller_refaccionariaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Ventas.Designer.vb">
+      <DependentUpon>Ventas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddArticulos.resx">
@@ -200,8 +236,20 @@
     <EmbeddedResource Include="Articulos.resx">
       <DependentUpon>Articulos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BuscarArticulo.resx">
+      <DependentUpon>BuscarArticulo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarCliente.resx">
+      <DependentUpon>BuscarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CantidadArticulo.resx">
+      <DependentUpon>CantidadArticulo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDescuento.resx">
+      <DependentUpon>FrmDescuento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditArticulo.resx">
       <DependentUpon>EditArticulo.vb</DependentUpon>
@@ -215,6 +263,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CambiarImporte.resx">
+      <DependentUpon>CambiarImporte.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -223,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores.resx">
       <DependentUpon>Proveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas.resx">
+      <DependentUpon>Ventas.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -302,6 +356,24 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\148705-essential-collection\148705-essential-collection\png\058-error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\148705-essential-collection\148705-essential-collection\png\088-percent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\3347550-global-business\3347550-global-business\png\020-money bag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\3347550-global-business\3347550-global-business\png\033-handshake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\148705-essential-collection\148705-essential-collection\png\359-users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\148705-essential-collection\148705-essential-collection\png\079-calculator.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

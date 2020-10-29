@@ -13,13 +13,16 @@ Public Class Clientes
 
     End Sub
 
-    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
+    Private Sub DataGridViewClientes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewClientes.CellClick
+        claveClienteSeleccionado = DataGridViewClientes.CurrentRow.Cells(0).Value.ToString
+    End Sub
+
+    Private Sub BtnAgregar_Click_1(sender As Object, e As EventArgs) Handles BtnAgregar.Click
         AddCliente.StartPosition = FormStartPosition.CenterScreen
         AddCliente.ShowDialog()
     End Sub
 
-    Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
-
+    Private Sub BtnEditar_Click_1(sender As Object, e As EventArgs) Handles BtnEditar.Click
         comando.CommandText = "SELECT C.cli_id FROM cliente AS C WHERE C.clave='" & claveClienteSeleccionado & "'"
         lector = comando.ExecuteReader
         lector.Read()
@@ -30,7 +33,7 @@ Public Class Clientes
         EditCliente.ShowDialog()
     End Sub
 
-    Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
+    Private Sub BtnEliminar_Click_1(sender As Object, e As EventArgs) Handles BtnEliminar.Click
         Dim R As String
 
         Dim answer As Integer = MessageBox.Show("Estas seguro de eliminar este cliente?", "CONFIRMACIÓN DE ELIMINAÇIÓN", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -45,7 +48,7 @@ Public Class Clientes
         End If
     End Sub
 
-    Private Sub DataGridViewClientes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewClientes.CellClick
-        claveClienteSeleccionado = DataGridViewClientes.CurrentRow.Cells(0).Value.ToString
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
     End Sub
 End Class

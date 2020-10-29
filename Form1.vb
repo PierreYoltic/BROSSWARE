@@ -1,4 +1,5 @@
 ﻿Public Class FormMenu
+    Public fm As Form
     Private Sub ButtonArticulos_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -7,7 +8,7 @@
         If PanelContenedor.Controls.Count > 0 Then
             PanelContenedor.Controls.RemoveAt(0)
         End If
-        Dim fm As Form = FormHijo
+        fm = FormHijo
         fm.TopLevel = False
         fm.Dock = DockStyle.Fill
         PanelContenedor.Controls.Add(fm)
@@ -24,5 +25,9 @@
 
     Private Sub BtnProveedores_Click(sender As Object, e As EventArgs) Handles BtnProveedores.Click
         AbrirFormInPanel(New Proveedores())
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        AbrirFormInPanel(New Ventas())
     End Sub
 End Class
