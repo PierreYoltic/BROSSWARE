@@ -9,14 +9,19 @@ Public Class EditArticulo
         Dim Servicio As Integer
         Dim res = Articulos.BuscarClave(TxtClave.Text)
 
-        If res <> 0 Then
+        If res <> 0 And TxtClave.Text <> claveArticuloSeleccionado Then
+            'If TxtClave.Text <> claveArticuloSeleccionado Then
             Articulos.ValidarClaveExistente(TxtClave.Text, Me)
+            'End If
         Else
             If CheckBoxServicio.Checked Then
                 Servicio = 1
             Else
                 Servicio = 0
             End If
+
+            conexion.Open()
+            comando = conexion.CreateCommand
 
             R = "UPDATE articulo
             SET clave='" & TxtClave.Text &
@@ -34,6 +39,8 @@ Public Class EditArticulo
             comando.CommandText = R
             comando.ExecuteNonQuery()
             conexion.Close()
+
+            'Articulos.updateData()
 
             Articulos.Dispose()
             FormMenu.AbrirFormInPanel(New Articulos())

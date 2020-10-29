@@ -255,7 +255,7 @@ Partial Class FormMenu
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(245, 45)
         Me.Button7.TabIndex = 5
-        Me.Button7.Text = "MenuOpc4"
+        Me.Button7.Text = "Ventas"
         Me.Button7.UseVisualStyleBackColor = True
         '
         'Button3
@@ -460,5 +460,5 @@ Partial Class FormMenu
     Friend WithEvents Button7 As Button
     Friend WithEvents BtnProveedores As Button
     Friend WithEvents BtnClientes As Button
-    Friend WithEvents PanelContenedor As Panel
+    Public WithEvents PanelContenedor As Panel
 End Class

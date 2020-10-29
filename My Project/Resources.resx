@@ -130,11 +130,23 @@
   <data name="_008_tick_mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>3388463-basic-ui\3388463-basic-ui\png\008-tick mark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_020_money_bag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>3347550-global-business\3347550-global-business\png\020-money bag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_033_handshake" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>3347550-global-business\3347550-global-business\png\033-handshake.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_046_maximize" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>3388463-basic-ui\3388463-basic-ui\png\046-maximize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_058_error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>148705-essential-collection\148705-essential-collection\png\058-error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_074_bin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>3388463-basic-ui\3388463-basic-ui\png\074-bin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_079_calculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>148705-essential-collection\148705-essential-collection\png\079-calculator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_082_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>148705-essential-collection\148705-essential-collection\png\082-add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -144,6 +156,9 @@
   </data>
   <data name="_084_multiply" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>148705-essential-collection\148705-essential-collection\png\084-multiply.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_088_percent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>148705-essential-collection\148705-essential-collection\png\088-percent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_276_trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>148705-essential-collection\148705-essential-collection\png\276-trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -156,5 +171,8 @@
   </data>
   <data name="_323_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>148705-essential-collection\148705-essential-collection\png\323-add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_359_users" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>148705-essential-collection\148705-essential-collection\png\359-users.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
