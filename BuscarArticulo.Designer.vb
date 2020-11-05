@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class BuscarArticulo
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,32 +20,25 @@ Partial Class BuscarArticulo
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxtCodigo = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DataGridViewArticulos = New System.Windows.Forms.DataGridView()
-        Me.ClaveDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ExistDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShowActiveItemsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Taller_refaccionariaDataSet = New MotoBox.taller_refaccionariaDataSet()
-        Me.ShowActiveItemsTableAdapter = New MotoBox.taller_refaccionariaDataSetTableAdapters.showActiveItemsTableAdapter()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.servicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.exist = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.price = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridViewArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ShowActiveItemsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Taller_refaccionariaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -55,8 +48,9 @@ Partial Class BuscarArticulo
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(800, 50)
+        Me.Panel1.Size = New System.Drawing.Size(600, 41)
         Me.Panel1.TabIndex = 0
         '
         'Button1
@@ -64,9 +58,10 @@ Partial Class BuscarArticulo
         Me.Button1.BackgroundImage = Global.MotoBox.My.Resources.Resources._084_multiply
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(750, 0)
+        Me.Button1.Location = New System.Drawing.Point(562, 0)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(50, 50)
+        Me.Button1.Size = New System.Drawing.Size(38, 41)
         Me.Button1.TabIndex = 1
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -75,9 +70,10 @@ Partial Class BuscarArticulo
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label1.Location = New System.Drawing.Point(322, 14)
+        Me.Label1.Location = New System.Drawing.Point(242, 11)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(156, 23)
+        Me.Label1.Size = New System.Drawing.Size(126, 21)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Buscar Artículo"
         '
@@ -85,12 +81,13 @@ Partial Class BuscarArticulo
         '
         Me.Panel2.Controls.Add(Me.Button3)
         Me.Panel2.Controls.Add(Me.Button2)
-        Me.Panel2.Controls.Add(Me.TextBox1)
+        Me.Panel2.Controls.Add(Me.TxtCodigo)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 50)
+        Me.Panel2.Location = New System.Drawing.Point(0, 41)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(800, 70)
+        Me.Panel2.Size = New System.Drawing.Size(600, 57)
         Me.Panel2.TabIndex = 1
         '
         'Button3
@@ -98,9 +95,10 @@ Partial Class BuscarArticulo
         Me.Button3.Font = New System.Drawing.Font("Century Gothic", 11.0!, System.Drawing.FontStyle.Bold)
         Me.Button3.Image = Global.MotoBox.My.Resources.Resources._279_edit
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(679, 15)
+        Me.Button3.Location = New System.Drawing.Point(509, 12)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(2)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(109, 40)
+        Me.Button3.Size = New System.Drawing.Size(82, 32)
         Me.Button3.TabIndex = 11
         Me.Button3.Text = "Editar"
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -111,30 +109,33 @@ Partial Class BuscarArticulo
         Me.Button2.Font = New System.Drawing.Font("Century Gothic", 11.0!, System.Drawing.FontStyle.Bold)
         Me.Button2.Image = Global.MotoBox.My.Resources.Resources._323_add
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(526, 15)
+        Me.Button2.Location = New System.Drawing.Point(394, 12)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(147, 40)
+        Me.Button2.Size = New System.Drawing.Size(110, 32)
         Me.Button2.TabIndex = 10
         Me.Button2.Text = "Agregar"
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'TxtCodigo
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.TextBox1.Location = New System.Drawing.Point(142, 19)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(378, 32)
-        Me.TextBox1.TabIndex = 9
+        Me.TxtCodigo.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        Me.TxtCodigo.Location = New System.Drawing.Point(106, 15)
+        Me.TxtCodigo.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtCodigo.Name = "TxtCodigo"
+        Me.TxtCodigo.Size = New System.Drawing.Size(284, 27)
+        Me.TxtCodigo.TabIndex = 9
         '
         'Label4
         '
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label4.Image = Global.MotoBox.My.Resources.Resources._313_search
         Me.Label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label4.Location = New System.Drawing.Point(12, 19)
+        Me.Label4.Location = New System.Drawing.Point(9, 15)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(148, 33)
+        Me.Label4.Size = New System.Drawing.Size(111, 27)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Buscar:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -143,93 +144,57 @@ Partial Class BuscarArticulo
         '
         Me.DataGridViewArticulos.AllowUserToAddRows = False
         Me.DataGridViewArticulos.AllowUserToDeleteRows = False
-        Me.DataGridViewArticulos.AutoGenerateColumns = False
         Me.DataGridViewArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewArticulos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ClaveDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn, Me.ExistDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn})
-        Me.DataGridViewArticulos.DataSource = Me.ShowActiveItemsBindingSource
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 8.0!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewArticulos.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridViewArticulos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.servicio, Me.desc, Me.exist, Me.price})
         Me.DataGridViewArticulos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridViewArticulos.Location = New System.Drawing.Point(0, 120)
+        Me.DataGridViewArticulos.Location = New System.Drawing.Point(0, 98)
         Me.DataGridViewArticulos.Name = "DataGridViewArticulos"
         Me.DataGridViewArticulos.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewArticulos.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridViewArticulos.RowHeadersWidth = 51
-        Me.DataGridViewArticulos.RowTemplate.Height = 24
-        Me.DataGridViewArticulos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DataGridViewArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewArticulos.Size = New System.Drawing.Size(800, 330)
+        Me.DataGridViewArticulos.Size = New System.Drawing.Size(600, 268)
         Me.DataGridViewArticulos.TabIndex = 2
         '
-        'ClaveDataGridViewTextBoxColumn
+        'id
         '
-        Me.ClaveDataGridViewTextBoxColumn.DataPropertyName = "Clave"
-        Me.ClaveDataGridViewTextBoxColumn.HeaderText = "Clave"
-        Me.ClaveDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.ClaveDataGridViewTextBoxColumn.Name = "ClaveDataGridViewTextBoxColumn"
-        Me.ClaveDataGridViewTextBoxColumn.ReadOnly = True
+        Me.id.HeaderText = "ID/Código"
+        Me.id.Name = "id"
+        Me.id.ReadOnly = True
         '
-        'DescripcionDataGridViewTextBoxColumn
+        'servicio
         '
-        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
-        Me.DescripcionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.servicio.HeaderText = "S"
+        Me.servicio.Name = "servicio"
+        Me.servicio.ReadOnly = True
         '
-        'ExistDataGridViewTextBoxColumn
+        'desc
         '
-        Me.ExistDataGridViewTextBoxColumn.DataPropertyName = "Exist"
-        Me.ExistDataGridViewTextBoxColumn.HeaderText = "Exist"
-        Me.ExistDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.ExistDataGridViewTextBoxColumn.Name = "ExistDataGridViewTextBoxColumn"
-        Me.ExistDataGridViewTextBoxColumn.ReadOnly = True
+        Me.desc.HeaderText = "Descripción"
+        Me.desc.Name = "desc"
+        Me.desc.ReadOnly = True
         '
-        'PrecioDataGridViewTextBoxColumn
+        'exist
         '
-        Me.PrecioDataGridViewTextBoxColumn.DataPropertyName = "Precio"
-        Me.PrecioDataGridViewTextBoxColumn.HeaderText = "Precio"
-        Me.PrecioDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
-        Me.PrecioDataGridViewTextBoxColumn.ReadOnly = True
+        Me.exist.HeaderText = "Existencia"
+        Me.exist.Name = "exist"
+        Me.exist.ReadOnly = True
         '
-        'ShowActiveItemsBindingSource
+        'price
         '
-        Me.ShowActiveItemsBindingSource.DataMember = "showActiveItems"
-        Me.ShowActiveItemsBindingSource.DataSource = Me.Taller_refaccionariaDataSet
-        '
-        'Taller_refaccionariaDataSet
-        '
-        Me.Taller_refaccionariaDataSet.DataSetName = "taller_refaccionariaDataSet"
-        Me.Taller_refaccionariaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ShowActiveItemsTableAdapter
-        '
-        Me.ShowActiveItemsTableAdapter.ClearBeforeFill = True
+        Me.price.HeaderText = "Precio"
+        Me.price.Name = "price"
+        Me.price.ReadOnly = True
         '
         'BuscarArticulo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(600, 366)
         Me.Controls.Add(Me.DataGridViewArticulos)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "BuscarArticulo"
         Me.Text = "BuscarArticulo"
         Me.Panel1.ResumeLayout(False)
@@ -237,8 +202,6 @@ Partial Class BuscarArticulo
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.DataGridViewArticulos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ShowActiveItemsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Taller_refaccionariaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -247,16 +210,16 @@ Partial Class BuscarArticulo
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtCodigo As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents DataGridViewArticulos As DataGridView
-    Friend WithEvents Taller_refaccionariaDataSet As taller_refaccionariaDataSet
-    Friend WithEvents ShowActiveItemsBindingSource As BindingSource
-    Friend WithEvents ShowActiveItemsTableAdapter As taller_refaccionariaDataSetTableAdapters.showActiveItemsTableAdapter
     Friend WithEvents ClaveDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DescripcionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ExistDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PrecioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewArticulos As DataGridView
+    Friend WithEvents id As DataGridViewTextBoxColumn
+    Friend WithEvents servicio As DataGridViewTextBoxColumn
+    Friend WithEvents desc As DataGridViewTextBoxColumn
+    Friend WithEvents exist As DataGridViewTextBoxColumn
+    Friend WithEvents price As DataGridViewTextBoxColumn
 End Class

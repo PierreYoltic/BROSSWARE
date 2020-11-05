@@ -133,6 +133,9 @@
   <data name="_020_money_bag" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>3347550-global-business\3347550-global-business\png\020-money bag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_021_view" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>148705-essential-collection\148705-essential-collection\png\021-view.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_033_handshake" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>3347550-global-business\3347550-global-business\png\033-handshake.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -159,6 +162,9 @@
   </data>
   <data name="_088_percent" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>148705-essential-collection\148705-essential-collection\png\088-percent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_222_print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>148705-essential-collection\148705-essential-collection\png\222-print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_276_trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>148705-essential-collection\148705-essential-collection\png\276-trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

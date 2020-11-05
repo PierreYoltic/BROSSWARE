@@ -21,7 +21,8 @@ Public Class CantidadArticulo
     Private Sub CantidadArticulo_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         If opcion = 1 Then
             Dim frm As Ventas = FormMenu.fm
-            frm.SetCantidad(Val(TxtCantidad.Text))
+            frm.SetCantidad(Val(TxtCantidad.Text), frm.Row)
+
         End If
     End Sub
 

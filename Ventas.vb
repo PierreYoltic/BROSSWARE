@@ -1,4 +1,4 @@
-﻿'FALTA PROGRAMAR DESCUENTOS
+﻿
 'FALTA PROGRMAR FUNCION DE BUSQUEDA DE ARTICULOS
 
 
@@ -7,15 +7,12 @@ Public Class Ventas
     Dim conexion As New SqlConnection("Data Source=PIER18;Initial catalog=taller_refaccionaria; Integrated security = true")
     Dim comando As New SqlCommand
     Dim lector As SqlDataReader
-    'Dim IdCliente As Integer = 1
     Dim IdVenta As Integer
     Public Row As Integer = -1
     Public Total As Decimal = 0
     Dim Descuento As Decimal
-    'Dim ImporteArticulo As Decimal
-    'Dim Cli_id As Integer
+    Dim Subtotal As Decimal = 0
 
-    Dim frm As BuscarCliente
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
         BuscarArticulo.StartPosition = FormStartPosition.CenterScreen
         BuscarArticulo.ShowDialog()
@@ -29,13 +26,15 @@ Public Class Ventas
 
     Public Sub AgregarArticulo(ByVal art As String())
         MsgBox(art(0) & art(1) & art(2) & art(3))
+        'Dim Frm As Ventas = FormMenu.fm
         For i = 0 To DataGridViewVenta.RowCount - 1
             If DataGridViewVenta.Rows(i).Cells(1).Value = art(0) Then
-                DataGridViewVenta.Rows(i).Cells(0).Value += 1
+                SetCantidad(Val(DataGridViewVenta.Rows(i).Cells(0).Value) + 1, i)
+                CalcularTotal()
                 Exit Sub
             End If
         Next
-        DataGridViewVenta.Rows.Add("1", art(0), art(1), art(2), "0", art(3), art(3))
+        DataGridViewVenta.Rows.Add("1", art(0), art(1), art(2), art(3), art(4), art(4))
         CalcularTotal()
     End Sub
 
@@ -51,7 +50,6 @@ Public Class Ventas
     End Sub
 
     Private Sub DataGridViewVenta_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewVenta.CellClick
-        'claveArticuloSeleccionado = DataGridViewVenta.CurrentRow.Cells(0).Value.ToString
         Row = e.RowIndex
     End Sub
 
@@ -60,8 +58,9 @@ Public Class Ventas
         CantidadArticulo.ShowDialog()
     End Sub
 
-    Public Sub SetCantidad(cant As Integer)
-        DataGridViewVenta.Rows(Row).Cells(0).Value = cant
+    Public Sub SetCantidad(cant As Integer, i As Integer)
+        DataGridViewVenta.Rows(i).Cells(0).Value = cant
+        DataGridViewVenta.Rows(i).Cells(6).Value = DataGridViewVenta.Rows(i).Cells(5).Value * cant
         CalcularTotal()
     End Sub
 
@@ -97,15 +96,58 @@ Public Class Ventas
     End Sub
 
     Private Sub CalcularTotal()
-        Dim t As Decimal
+        Subtotal = 0
         For i = 0 To DataGridViewVenta.RowCount - 1
-            t += DataGridViewVenta.Rows(i).Cells(6).Value * DataGridViewVenta.Rows(i).Cells(0).Value
+            Subtotal += DataGridViewVenta.Rows(i).Cells(6).Value
         Next
-        t -= Descuento
-        LblTotal.Text = "Total: $" & t & " MXN"
+        Total = Subtotal - Descuento
+
+        LblSubtotal.Text = "Subtotal: $" & Subtotal
+        LblTotal.Text = "Total: $" & Total & " MXN"
+
     End Sub
 
     Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
-
+        CerrarVenta.StartPosition = FormStartPosition.CenterParent
+        CerrarVenta.Show()
     End Sub
+
+    Public Sub Cerrar(comentario As String)
+        conexion.Open()
+        comando = conexion.CreateCommand
+        Dim R = "INSERT INTO venta
+                VALUES(" & IdVenta & ",'" & DTPFecha.Value & "'," & Subtotal &
+                     "," & Descuento & "," & Total & ",'" & comentario &
+                     "'," & 1 & "," & Val(TxtIdCliente.Text) & ")"
+        comando.CommandText = R
+        comando.ExecuteNonQuery()
+        For i = 0 To DataGridViewVenta.RowCount - 1
+            If DataGridViewVenta.Rows(i).Cells(2).Value = "*" Then
+                R = "INSERT INTO detalleservicio
+                VALUES(" & IdVenta & "," & DataGridViewVenta.Rows(i).Cells(1).Value &
+                                     "," & DataGridViewVenta.Rows(i).Cells(6).Value & ")"
+                comando.CommandText = R
+                comando.ExecuteNonQuery()
+            Else
+                R = "INSERT INTO detalleventa
+                VALUES(" & IdVenta & ",'" & DataGridViewVenta.Rows(i).Cells(1).Value &
+                                    "'," & DataGridViewVenta.Rows(i).Cells(0).Value &
+                                     "," & DataGridViewVenta.Rows(i).Cells(6).Value & ")"
+                comando.CommandText = R
+                comando.ExecuteNonQuery()
+
+                R = "UPDATE articulo
+                    SET existencia =" & Val(DataGridViewVenta.Rows(i).Cells(4).Value) - Val(DataGridViewVenta.Rows(i).Cells(0).Value) &
+                    "WHERE codigo=" & DataGridViewVenta.Rows(i).Cells(1).Value
+                comando.CommandText = R
+                comando.ExecuteNonQuery()
+            End If
+
+        Next
+        conexion.Close()
+        FormMenu.AbrirFormInPanel(New Ventas)
+        Me.Dispose()
+    End Sub
+
+
 End Class
