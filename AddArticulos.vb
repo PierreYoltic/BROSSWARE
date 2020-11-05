@@ -3,37 +3,35 @@ Public Class AddArticulos
     Dim conexion As New SqlConnection("Data Source=PIER18;Initial catalog=taller_refaccionaria; Integrated security = true")
     Dim comando As New SqlCommand
     Dim id As Integer
+    Dim lector As SqlDataReader
+    Dim Frm As Articulos = FormMenu.fm
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+        conexion.Close()
         Me.Dispose()
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
         Dim R As String
-        Dim Servicio As Integer
         Dim res = Articulos.BuscarClave(TxtClave.Text)
 
         If res <> 0 Then
             Articulos.ValidarClaveExistente(TxtClave.Text, Me)
-        Else
-            If CheckBoxServicio.Checked Then
-                Servicio = 1
-            Else
-                Servicio = 0
-            End If
 
-            conexion.Open()
+        Else
+            Dim cat = ComboBoxCategoria.SelectedIndex + 1
+
             comando = conexion.CreateCommand
 
             R = "INSERT INTO articulo
-            VALUES(" & id & ",'" & TxtClave.Text & "','" & TxtClaveAlterna.Text & "','" & TxtDescripcion.Text & "'," & Servicio &
-                "," & Val(NumMin.Value) & "," & Val(NumMax.Value) & "," & Val(TxtPrecioC.Text) & "," & Val(TxtPrecioC.Text) & "," & Val(TxtPrecioV.Text) &
-                "," & Val(NumExist.Value) & ",'" & TxtCaracteristicas.Text & "'," & 1 & ")"
+            VALUES('" & TxtClave.Text & "','" & TxtDescripcion.Text &
+                "'," & Val(NumMin.Value) & "," & Val(NumMax.Value) & "," & Val(TxtPrecioC.Text) & "," & Val(TxtPrecioV.Text) &
+                "," & Val(NumExist.Value) & ",'" & TxtCaracteristicas.Text & "'," & 1 & "," & cat & ")"
 
             comando.CommandText = R
             comando.ExecuteNonQuery()
+
             conexion.Close()
-            Articulos.Dispose()
-            FormMenu.AbrirFormInPanel(New Articulos())
+            Frm.UpdateItems()
 
             Me.Dispose()
         End If
@@ -47,7 +45,16 @@ Public Class AddArticulos
         comando = conexion.CreateCommand
         comando.CommandText = "SELECT COUNT(*) FROM articulo"
         id = comando.ExecuteScalar + 1
-        conexion.Close()
+
+        comando.CommandText = "SELECT nombre FROM categoria"
+        lector = comando.ExecuteReader
+        While lector.Read()
+            ComboBoxCategoria.Items.Add(lector(0))
+        End While
+        lector.Close()
+
+        ComboBoxCategoria.SelectedIndex = 0
+
     End Sub
 
 

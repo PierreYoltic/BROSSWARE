@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>26</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -79,6 +79,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -143,10 +144,40 @@
     <Compile Include="CantidadArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CerrarVenta.Designer.vb">
+      <DependentUpon>CerrarVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CerrarVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Clientes.Designer.vb">
       <DependentUpon>Clientes.vb</DependentUpon>
     </Compile>
     <Compile Include="Clientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras.Designer.vb">
+      <DependentUpon>Compras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Compras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaIndividualVenta.Designer.vb">
+      <DependentUpon>ConsultaIndividualVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaIndividualVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaVenta.Designer.vb">
+      <DependentUpon>ConsultaVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarArticuloCompra.Designer.vb">
+      <DependentUpon>EditarArticuloCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditarArticuloCompra.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDescuento.Designer.vb">
@@ -245,8 +276,23 @@
     <EmbeddedResource Include="CantidadArticulo.resx">
       <DependentUpon>CantidadArticulo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CerrarVenta.resx">
+      <DependentUpon>CerrarVenta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras.resx">
+      <DependentUpon>Compras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaIndividualVenta.resx">
+      <DependentUpon>ConsultaIndividualVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaVenta.resx">
+      <DependentUpon>ConsultaVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarArticuloCompra.resx">
+      <DependentUpon>EditarArticuloCompra.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDescuento.resx">
       <DependentUpon>FrmDescuento.vb</DependentUpon>
@@ -374,6 +420,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\148705-essential-collection\148705-essential-collection\png\079-calculator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\148705-essential-collection\148705-essential-collection\png\021-view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\148705-essential-collection\148705-essential-collection\png\222-print.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

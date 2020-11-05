@@ -3,13 +3,17 @@ Public Class Articulos
     Dim conexion As New SqlConnection("Data Source=PIER18;Initial catalog=taller_refaccionaria; Integrated security = true")
     Dim comando As New SqlCommand
     Dim lector As SqlDataReader
+    Public row
     Private Sub Articulos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Taller_refaccionariaDataSet.showActiveItems' table. You can move, or remove it, as needed.
         'Me.ShowActiveItemsTableAdapter.Fill(Me.Taller_refaccionariaDataSet.showActiveItems)
+        'TODO: This line of code loads data into the 'Taller_refaccionariaDataSet.showActiveItems' table. You can move, or remove it, as needed.
+        'Me.ShowActiveItemsTableAdapter.Fill(Me.Taller_refaccionariaDataSet.showActiveItems)
         SqlDataAdapter1.Fill(Taller_refaccionariaDataSet.showActiveItems)
+        opcion = 1
+
+
     End Sub
-
-
 
     Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
 
@@ -33,7 +37,7 @@ Public Class Articulos
         If answer = vbYes Then
             R = "UPDATE articulo
             SET status=" & -1 &
-           "WHERE clave='" & claveArticuloSeleccionado & "'"
+           "WHERE codigo='" & claveArticuloSeleccionado & "'"
 
             comando.CommandText = R
             comando.ExecuteNonQuery()
@@ -42,9 +46,7 @@ Public Class Articulos
             'ShowActiveItemsTableAdapter.Fill(Taller_refaccionariaDataSet.showActiveItems)
             '
             'DataGridViewArticulos
-            Taller_refaccionariaDataSet.showActiveItems.Clear()
-            SqlDataAdapter1.Fill(Taller_refaccionariaDataSet.showActiveItems)
-            DataGridViewArticulos.DataSource = ShowActiveItemsBindingSource
+            UpdateItems()
             conexion.Close()
             claveArticuloSeleccionado = vbNullString
         End If
@@ -53,7 +55,6 @@ Public Class Articulos
     End Sub
 
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
-
         AddArticulos.StartPosition = FormStartPosition.CenterScreen
         AddArticulos.ShowDialog()
     End Sub
@@ -66,12 +67,15 @@ Public Class Articulos
         Dim R As String
         conexion.Open()
         comando = conexion.CreateCommand
-        R = "SELECT COUNT(clave)
+
+        R = "SELECT COUNT(codigo)
              FROM articulo
-             WHERE clave = '" & key & "'"
+             WHERE codigo = '" & key & "'"
         comando.CommandText = R
         lector = comando.ExecuteReader
         lector.Read()
+
+
         Dim res = Val(lector(0))
         lector.Close()
         conexion.Close()
@@ -83,7 +87,7 @@ Public Class Articulos
         comando = conexion.CreateCommand
         Dim R As String = "SELECT status
              FROM articulo
-             WHERE clave = '" & key & "'"
+             WHERE codigo = '" & key & "'"
 
         comando.CommandText = R
         lector = comando.ExecuteReader
@@ -92,13 +96,13 @@ Public Class Articulos
         lector.Close()
 
         If res = 1 Then
-            MessageBox.Show("Ya existe un artículo con la misma CLAVE, debes cambiarla", "CLAVE REPETIDA", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Ya existe un artículo con el mismo CÓDIGO, debes cambiarla", "CÓDIGO REPETIDO", MessageBoxButtons.OK, MessageBoxIcon.Error)
             conexion.Close()
             Exit Sub
         ElseIf res = -1 Then
-            MessageBox.Show("El artículo que intentas agregar tiene una clave de un Artículo eliminado, por lo tanto se recuperará", "CLAVE ANTERIORMENTE REGISTRADA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("El artículo que intentas agregar tiene un código de un Artículo eliminado, por lo tanto se recuperará", "CÓDIGO ANTERIORMENTE REGISTRADO", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'lector.Close()
-            R = "UPDATE articulo SET status = 1 WHERE clave='" & key & "'"
+            R = "UPDATE articulo SET status = 1 WHERE codigo='" & key & "'"
             comando.CommandText = R
             comando.ExecuteNonQuery()
             conexion.Close()
@@ -109,16 +113,24 @@ Public Class Articulos
     End Sub
 
     Private Sub SqlDataAdapter1_RowUpdated(sender As Object, e As SqlRowUpdatedEventArgs) Handles SqlDataAdapter1.RowUpdated
-        ''MsgBox("Si Existo")
+
         If e.Status = UpdateStatus.ErrorsOccurred Then
             MessageBox.Show(e.Errors.Message & vbCrLf &
-                            e.Row.Item("Descripcion", DataRowVersion.Original) & vbCrLf &
-                            e.Row.Item("Descripcion", DataRowVersion.Current))
+                            e.Row.Item("Descripción", DataRowVersion.Original) & vbCrLf &
+                            e.Row.Item("Descripción", DataRowVersion.Current))
             e.Status = UpdateStatus.SkipCurrentRow
         End If
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        SqlDataAdapter1.Update(Taller_refaccionariaDataSet.showActiveItems)
+        Taller_refaccionariaDataSet.showActiveItems.Clear()
+        SqlDataAdapter1.Fill(Taller_refaccionariaDataSet.showActiveItems)
+    End Sub
+
+    Public Sub UpdateItems()
+        ShowActiveItemsBindingSource.EndEdit()
         SqlDataAdapter1.Update(Taller_refaccionariaDataSet.showActiveItems)
         Taller_refaccionariaDataSet.showActiveItems.Clear()
         SqlDataAdapter1.Fill(Taller_refaccionariaDataSet.showActiveItems)
