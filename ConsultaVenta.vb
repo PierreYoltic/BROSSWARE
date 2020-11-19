@@ -6,13 +6,9 @@ Public Class ConsultaVenta
     Public Row As Integer
     Public cliid As Integer
     Private Sub ConsultaVenta_Load(sender As Object, e As EventArgs) Handles Me.Load
-        'conexion.Open()
         comando = conexion.CreateCommand
         ComboBoxEstado.SelectedIndex = 0
-        'conexion.Close()
-
     End Sub
-
     Private Sub showVentas(estado)
         Dim estadoVenta As String = ""
         Dim FechaFinal As DateTime = DTPFechaFinal.Value
@@ -32,7 +28,6 @@ Public Class ConsultaVenta
         End While
         conexion.Close()
     End Sub
-
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxEstado.SelectedIndexChanged
         DataGridViewVentas.Rows.Clear()
 
@@ -45,7 +40,6 @@ Public Class ConsultaVenta
             showVentas(0)
         End If
     End Sub
-
     Private Sub DTPFechaFinal_ValueChanged(sender As Object, e As EventArgs) Handles DTPFechaFinal.ValueChanged
         DataGridViewVentas.Rows.Clear()
 
@@ -58,7 +52,6 @@ Public Class ConsultaVenta
             showVentas(0)
         End If
     End Sub
-
     Private Sub DTPFechaInicial_ValueChanged(sender As Object, e As EventArgs) Handles DTPFechaInicial.ValueChanged
         DataGridViewVentas.Rows.Clear()
 
@@ -71,12 +64,10 @@ Public Class ConsultaVenta
             showVentas(0)
         End If
     End Sub
-
     Private Sub DataGridViewVentas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewVentas.CellClick
         Row = e.RowIndex
         claveVentaSeleccionada = DataGridViewVentas.Rows(e.RowIndex).Cells(1).Value
     End Sub
-
     Private Sub BtnMostrar_Click(sender As Object, e As EventArgs) Handles BtnMostrar.Click
         ConsultaIndividualVenta.StartPosition = FormStartPosition.CenterParent
         ConsultaIndividualVenta.Show()

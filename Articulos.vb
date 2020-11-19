@@ -6,10 +6,12 @@ Public Class Articulos
     Public row
     Private Sub Articulos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Taller_refaccionariaDataSet.showActiveItems' table. You can move, or remove it, as needed.
+        Me.ShowActiveItemsTableAdapter.Fill(Me.Taller_refaccionariaDataSet.showActiveItems)
+        'TODO: This line of code loads data into the 'Taller_refaccionariaDataSet.showActiveItems' table. You can move, or remove it, as needed.
         'Me.ShowActiveItemsTableAdapter.Fill(Me.Taller_refaccionariaDataSet.showActiveItems)
         'TODO: This line of code loads data into the 'Taller_refaccionariaDataSet.showActiveItems' table. You can move, or remove it, as needed.
         'Me.ShowActiveItemsTableAdapter.Fill(Me.Taller_refaccionariaDataSet.showActiveItems)
-        SqlDataAdapter1.Fill(Taller_refaccionariaDataSet.showActiveItems)
+        'SqlDataAdapter1.Fill(Taller_refaccionariaDataSet.showActiveItems)
         opcion = 1
 
 
@@ -112,7 +114,7 @@ Public Class Articulos
         End If
     End Sub
 
-    Private Sub SqlDataAdapter1_RowUpdated(sender As Object, e As SqlRowUpdatedEventArgs) Handles SqlDataAdapter1.RowUpdated
+    Private Sub SqlDataAdapter1_RowUpdated(sender As Object, e As SqlRowUpdatedEventArgs)
 
         If e.Status = UpdateStatus.ErrorsOccurred Then
             MessageBox.Show(e.Errors.Message & vbCrLf &

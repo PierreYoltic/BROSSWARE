@@ -27,30 +27,30 @@ Partial Class EditarArticuloCompra
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtExistencia = New System.Windows.Forms.TextBox()
+        Me.TxtDescripcion = New System.Windows.Forms.TextBox()
+        Me.TxtCodigo = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TxtPrecioActual = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TxtCostoProm = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TxtPrecio = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TxtUtilidad = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.BtnGuardar = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.TxtCosto = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TxtCantidad = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.BtnAceptar = New System.Windows.Forms.Button()
+        Me.BtnMantenerPrecios = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -109,9 +109,9 @@ Partial Class EditarArticuloCompra
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.TxtExistencia)
+        Me.GroupBox1.Controls.Add(Me.TxtDescripcion)
+        Me.GroupBox1.Controls.Add(Me.TxtCodigo)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -124,14 +124,29 @@ Partial Class EditarArticuloCompra
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información del Artículo"
         '
-        'Label2
+        'TxtExistencia
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 29)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(64, 19)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Código:"
+        Me.TxtExistencia.Enabled = False
+        Me.TxtExistencia.Location = New System.Drawing.Point(213, 51)
+        Me.TxtExistencia.Name = "TxtExistencia"
+        Me.TxtExistencia.Size = New System.Drawing.Size(194, 24)
+        Me.TxtExistencia.TabIndex = 5
+        '
+        'TxtDescripcion
+        '
+        Me.TxtDescripcion.Enabled = False
+        Me.TxtDescripcion.Location = New System.Drawing.Point(16, 100)
+        Me.TxtDescripcion.Name = "TxtDescripcion"
+        Me.TxtDescripcion.Size = New System.Drawing.Size(391, 24)
+        Me.TxtDescripcion.TabIndex = 4
+        '
+        'TxtCodigo
+        '
+        Me.TxtCodigo.Enabled = False
+        Me.TxtCodigo.Location = New System.Drawing.Point(16, 51)
+        Me.TxtCodigo.Name = "TxtCodigo"
+        Me.TxtCodigo.Size = New System.Drawing.Size(194, 24)
+        Me.TxtCodigo.TabIndex = 3
         '
         'Label3
         '
@@ -151,37 +166,22 @@ Partial Class EditarArticuloCompra
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Existencia:"
         '
-        'TextBox1
+        'Label2
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(16, 51)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(194, 24)
-        Me.TextBox1.TabIndex = 3
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(16, 100)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(391, 24)
-        Me.TextBox2.TabIndex = 4
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Enabled = False
-        Me.TextBox3.Location = New System.Drawing.Point(213, 51)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(194, 24)
-        Me.TextBox3.TabIndex = 5
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(12, 29)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(64, 19)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Código:"
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Controls.Add(Me.TextBox5)
+        Me.GroupBox2.Controls.Add(Me.TxtPrecioActual)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.TextBox4)
+        Me.GroupBox2.Controls.Add(Me.TxtCostoProm)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 10.0!)
@@ -192,31 +192,22 @@ Partial Class EditarArticuloCompra
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Precios"
         '
-        'TextBox4
+        'Label8
         '
-        Me.TextBox4.Enabled = False
-        Me.TextBox4.Location = New System.Drawing.Point(82, 39)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(128, 24)
-        Me.TextBox4.TabIndex = 7
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(216, 42)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(17, 19)
+        Me.Label8.TabIndex = 12
+        Me.Label8.Text = "$"
         '
-        'Label5
+        'TxtPrecioActual
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(59, 17)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(151, 19)
-        Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Costo Compra Prom."
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(216, 17)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(120, 19)
-        Me.Label6.TabIndex = 8
-        Me.Label6.Text = "Precio de Venta"
+        Me.TxtPrecioActual.Enabled = False
+        Me.TxtPrecioActual.Location = New System.Drawing.Point(236, 39)
+        Me.TxtPrecioActual.Name = "TxtPrecioActual"
+        Me.TxtPrecioActual.Size = New System.Drawing.Size(104, 24)
+        Me.TxtPrecioActual.TabIndex = 11
         '
         'Label7
         '
@@ -227,32 +218,41 @@ Partial Class EditarArticuloCompra
         Me.Label7.TabIndex = 10
         Me.Label7.Text = "$"
         '
-        'Label8
+        'Label6
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(216, 42)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(17, 19)
-        Me.Label8.TabIndex = 12
-        Me.Label8.Text = "$"
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(216, 17)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(120, 19)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "Precio de Venta"
         '
-        'TextBox5
+        'TxtCostoProm
         '
-        Me.TextBox5.Enabled = False
-        Me.TextBox5.Location = New System.Drawing.Point(236, 39)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(104, 24)
-        Me.TextBox5.TabIndex = 11
+        Me.TxtCostoProm.Enabled = False
+        Me.TxtCostoProm.Location = New System.Drawing.Point(82, 39)
+        Me.TxtCostoProm.Name = "TxtCostoProm"
+        Me.TxtCostoProm.Size = New System.Drawing.Size(128, 24)
+        Me.TxtCostoProm.TabIndex = 7
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(59, 17)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(151, 19)
+        Me.Label5.TabIndex = 6
+        Me.Label5.Text = "Costo Compra Prom."
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.TextBox8)
+        Me.GroupBox3.Controls.Add(Me.TxtPrecio)
         Me.GroupBox3.Controls.Add(Me.Label11)
-        Me.GroupBox3.Controls.Add(Me.TextBox9)
+        Me.GroupBox3.Controls.Add(Me.TxtUtilidad)
         Me.GroupBox3.Controls.Add(Me.Label12)
-        Me.GroupBox3.Controls.Add(Me.TextBox7)
+        Me.GroupBox3.Controls.Add(Me.TxtCosto)
         Me.GroupBox3.Controls.Add(Me.Label10)
-        Me.GroupBox3.Controls.Add(Me.TextBox6)
+        Me.GroupBox3.Controls.Add(Me.TxtCantidad)
         Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox3.Font = New System.Drawing.Font("Century Gothic", 10.0!)
@@ -263,48 +263,13 @@ Partial Class EditarArticuloCompra
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Detalle de la Compra"
         '
-        'TextBox6
+        'TxtPrecio
         '
-        Me.TextBox6.Location = New System.Drawing.Point(99, 23)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(111, 24)
-        Me.TextBox6.TabIndex = 7
-        Me.TextBox6.Text = "1"
-        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(12, 26)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(81, 19)
-        Me.Label9.TabIndex = 6
-        Me.Label9.Text = "Cantidad:"
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Location = New System.Drawing.Point(99, 53)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(111, 24)
-        Me.TextBox7.TabIndex = 9
-        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(12, 56)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(52, 19)
-        Me.Label10.TabIndex = 8
-        Me.Label10.Text = "Costo:"
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Location = New System.Drawing.Point(346, 53)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(61, 24)
-        Me.TextBox8.TabIndex = 13
-        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.TxtPrecio.Location = New System.Drawing.Point(346, 53)
+        Me.TxtPrecio.Name = "TxtPrecio"
+        Me.TxtPrecio.Size = New System.Drawing.Size(61, 24)
+        Me.TxtPrecio.TabIndex = 13
+        Me.TxtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label11
         '
@@ -315,13 +280,14 @@ Partial Class EditarArticuloCompra
         Me.Label11.TabIndex = 12
         Me.Label11.Text = "Precio de Venta:"
         '
-        'TextBox9
+        'TxtUtilidad
         '
-        Me.TextBox9.Location = New System.Drawing.Point(303, 23)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(104, 24)
-        Me.TextBox9.TabIndex = 11
-        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.TxtUtilidad.Location = New System.Drawing.Point(303, 23)
+        Me.TxtUtilidad.Name = "TxtUtilidad"
+        Me.TxtUtilidad.ReadOnly = True
+        Me.TxtUtilidad.Size = New System.Drawing.Size(104, 24)
+        Me.TxtUtilidad.TabIndex = 11
+        Me.TxtUtilidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label12
         '
@@ -332,48 +298,83 @@ Partial Class EditarArticuloCompra
         Me.Label12.TabIndex = 10
         Me.Label12.Text = "% Utilidad:"
         '
-        'BtnGuardar
+        'TxtCosto
         '
-        Me.BtnGuardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtnGuardar.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnGuardar.ForeColor = System.Drawing.Color.White
-        Me.BtnGuardar.Image = Global.MotoBox.My.Resources.Resources._008_tick_mark
-        Me.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnGuardar.Location = New System.Drawing.Point(213, 365)
-        Me.BtnGuardar.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
-        Me.BtnGuardar.Size = New System.Drawing.Size(194, 40)
-        Me.BtnGuardar.TabIndex = 15
-        Me.BtnGuardar.Text = "      Aceptar"
-        Me.BtnGuardar.UseVisualStyleBackColor = False
+        Me.TxtCosto.Location = New System.Drawing.Point(99, 53)
+        Me.TxtCosto.Name = "TxtCosto"
+        Me.TxtCosto.Size = New System.Drawing.Size(111, 24)
+        Me.TxtCosto.TabIndex = 9
+        Me.TxtCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'Button3
+        'Label10
         '
-        Me.Button3.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Image = Global.MotoBox.My.Resources.Resources._020_money_bag
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(16, 365)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
-        Me.Button3.Size = New System.Drawing.Size(194, 40)
-        Me.Button3.TabIndex = 16
-        Me.Button3.Text = "Precios Anteriores"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(12, 56)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(52, 19)
+        Me.Label10.TabIndex = 8
+        Me.Label10.Text = "Costo:"
+        '
+        'TxtCantidad
+        '
+        Me.TxtCantidad.Location = New System.Drawing.Point(99, 23)
+        Me.TxtCantidad.Name = "TxtCantidad"
+        Me.TxtCantidad.Size = New System.Drawing.Size(111, 24)
+        Me.TxtCantidad.TabIndex = 7
+        Me.TxtCantidad.Text = "1"
+        Me.TxtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(12, 26)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(81, 19)
+        Me.Label9.TabIndex = 6
+        Me.Label9.Text = "Cantidad:"
+        '
+        'BtnAceptar
+        '
+        Me.BtnAceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnAceptar.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAceptar.ForeColor = System.Drawing.Color.White
+        Me.BtnAceptar.Image = Global.MotoBox.My.Resources.Resources._008_tick_mark
+        Me.BtnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnAceptar.Location = New System.Drawing.Point(213, 365)
+        Me.BtnAceptar.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnAceptar.Name = "BtnAceptar"
+        Me.BtnAceptar.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.BtnAceptar.Size = New System.Drawing.Size(194, 40)
+        Me.BtnAceptar.TabIndex = 15
+        Me.BtnAceptar.Text = "      Aceptar"
+        Me.BtnAceptar.UseVisualStyleBackColor = False
+        '
+        'BtnMantenerPrecios
+        '
+        Me.BtnMantenerPrecios.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.BtnMantenerPrecios.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnMantenerPrecios.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnMantenerPrecios.ForeColor = System.Drawing.Color.Black
+        Me.BtnMantenerPrecios.Image = Global.MotoBox.My.Resources.Resources._020_money_bag
+        Me.BtnMantenerPrecios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnMantenerPrecios.Location = New System.Drawing.Point(16, 365)
+        Me.BtnMantenerPrecios.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnMantenerPrecios.Name = "BtnMantenerPrecios"
+        Me.BtnMantenerPrecios.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.BtnMantenerPrecios.Size = New System.Drawing.Size(194, 40)
+        Me.BtnMantenerPrecios.TabIndex = 16
+        Me.BtnMantenerPrecios.Text = "Precios Anteriores"
+        Me.BtnMantenerPrecios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnMantenerPrecios.UseVisualStyleBackColor = False
         '
         'EditarArticuloCompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(420, 415)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.BtnGuardar)
+        Me.Controls.Add(Me.BtnMantenerPrecios)
+        Me.Controls.Add(Me.BtnAceptar)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -398,28 +399,28 @@ Partial Class EditarArticuloCompra
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtExistencia As TextBox
+    Friend WithEvents TxtDescripcion As TextBox
+    Friend WithEvents TxtCodigo As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TxtPrecioActual As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TxtCostoProm As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents TxtCosto As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TxtCantidad As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents TxtPrecio As TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents TxtUtilidad As TextBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents BtnGuardar As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents BtnAceptar As Button
+    Friend WithEvents BtnMantenerPrecios As Button
 End Class

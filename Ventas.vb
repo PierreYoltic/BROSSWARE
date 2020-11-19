@@ -7,6 +7,8 @@ Public Class Ventas
     Dim conexion As New SqlConnection("Data Source=PIER18;Initial catalog=taller_refaccionaria; Integrated security = true")
     Dim comando As New SqlCommand
     Dim lector As SqlDataReader
+
+    Dim transaction As SqlTransaction
     Dim IdVenta As Integer
     Public Row As Integer = -1
     Public Total As Decimal = 0
@@ -115,39 +117,61 @@ Public Class Ventas
     Public Sub Cerrar(comentario As String)
         conexion.Open()
         comando = conexion.CreateCommand
-        Dim R = "INSERT INTO venta
+
+        transaction = conexion.BeginTransaction("SampleTransaction")
+
+        comando.Connection = conexion
+        comando.Transaction = transaction
+
+        Try
+            Dim R = "INSERT INTO venta
                 VALUES(" & IdVenta & ",'" & DTPFecha.Value & "'," & Subtotal &
                      "," & Descuento & "," & Total & ",'" & comentario &
                      "'," & 1 & "," & Val(TxtIdCliente.Text) & ")"
-        comando.CommandText = R
-        comando.ExecuteNonQuery()
-        For i = 0 To DataGridViewVenta.RowCount - 1
-            If DataGridViewVenta.Rows(i).Cells(2).Value = "*" Then
-                R = "INSERT INTO detalleservicio
-                VALUES(" & IdVenta & "," & DataGridViewVenta.Rows(i).Cells(1).Value &
-                                     "," & DataGridViewVenta.Rows(i).Cells(6).Value & ")"
-                comando.CommandText = R
-                comando.ExecuteNonQuery()
-            Else
-                R = "INSERT INTO detalleventa
-                VALUES(" & IdVenta & ",'" & DataGridViewVenta.Rows(i).Cells(1).Value &
-                                    "'," & DataGridViewVenta.Rows(i).Cells(0).Value &
-                                     "," & DataGridViewVenta.Rows(i).Cells(6).Value & ")"
-                comando.CommandText = R
-                comando.ExecuteNonQuery()
+            comando.CommandText = R
+            comando.ExecuteNonQuery()
 
-                R = "UPDATE articulo
+            For i = 0 To DataGridViewVenta.RowCount - 1
+                If DataGridViewVenta.Rows(i).Cells(2).Value = "*" Then
+                    R = "INSERT INTO detalleservicio
+                VALUES(" & IdVenta & "," & DataGridViewVenta.Rows(i).Cells(1).Value &
+                                         "," & DataGridViewVenta.Rows(i).Cells(6).Value & ")"
+                    comando.CommandText = R
+                    comando.ExecuteNonQuery()
+                Else
+                    R = "INSERT INTO detalleventa
+                VALUES(" & IdVenta & ",'" & DataGridViewVenta.Rows(i).Cells(1).Value &
+                                        "'," & DataGridViewVenta.Rows(i).Cells(0).Value &
+                                         "," & DataGridViewVenta.Rows(i).Cells(6).Value & ")"
+                    comando.CommandText = R
+                    comando.ExecuteNonQuery()
+
+                    R = "UPDATE articulo
                     SET existencia =" & Val(DataGridViewVenta.Rows(i).Cells(4).Value) - Val(DataGridViewVenta.Rows(i).Cells(0).Value) &
-                    "WHERE codigo=" & DataGridViewVenta.Rows(i).Cells(1).Value
-                comando.CommandText = R
-                comando.ExecuteNonQuery()
+                        "WHERE codigo=" & DataGridViewVenta.Rows(i).Cells(1).Value
+                    comando.CommandText = R
+                    comando.ExecuteNonQuery()
+                End If
+
+            Next
+            If MsgBox("Desea ejecutar transacción", MsgBoxStyle.YesNo, "Ejecutar") = MsgBoxResult.Yes Then
+                transaction.Commit()
+                MsgBox("OK")
+            Else
+                transaction.Rollback()
+                MsgBox("Transacción cancelada")
             End If
 
-        Next
+        Catch ex As Exception
+            MsgBox("Commit Exception Type: {0} no se pudo insertar por error")
+            Try
+                transaction.Rollback()
+            Catch ex2 As Exception
+                MsgBox("Error Rollback")
+            End Try
+        End Try
         conexion.Close()
         FormMenu.AbrirFormInPanel(New Ventas)
         Me.Dispose()
     End Sub
-
-
 End Class

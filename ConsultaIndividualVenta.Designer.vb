@@ -22,8 +22,8 @@ Partial Class ConsultaIndividualVenta
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -45,21 +45,24 @@ Partial Class ConsultaIndividualVenta
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridViewVenta = New System.Windows.Forms.DataGridView()
-        Me.Cant = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Clave = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.servicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Importe = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.LblComentario = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.LblTotal = New System.Windows.Forms.Label()
+        Me.Clave = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.servicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cant = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Importe = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.LblDescuento = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridViewVenta, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -178,7 +181,7 @@ Partial Class ConsultaIndividualVenta
         '
         Me.LblCP.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblCP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.LblCP.Location = New System.Drawing.Point(450, 59)
+        Me.LblCP.Location = New System.Drawing.Point(450, 57)
         Me.LblCP.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LblCP.Name = "LblCP"
         Me.LblCP.Size = New System.Drawing.Size(175, 21)
@@ -331,66 +334,27 @@ Partial Class ConsultaIndividualVenta
         Me.DataGridViewVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewVenta.BackgroundColor = System.Drawing.SystemColors.ControlLight
         Me.DataGridViewVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewVenta.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cant, Me.Clave, Me.servicio, Me.Descripcion, Me.Importe})
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewVenta.DefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridViewVenta.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Clave, Me.servicio, Me.Descripcion, Me.Cant, Me.Importe})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 10.0!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewVenta.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewVenta.Location = New System.Drawing.Point(13, 179)
         Me.DataGridViewVenta.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridViewVenta.Name = "DataGridViewVenta"
         Me.DataGridViewVenta.ReadOnly = True
         Me.DataGridViewVenta.RowHeadersWidth = 51
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.DataGridViewVenta.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        Me.DataGridViewVenta.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridViewVenta.RowTemplate.Height = 24
         Me.DataGridViewVenta.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DataGridViewVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewVenta.Size = New System.Drawing.Size(654, 200)
         Me.DataGridViewVenta.TabIndex = 12
-        '
-        'Cant
-        '
-        Me.Cant.FillWeight = 81.94307!
-        Me.Cant.HeaderText = "Cant."
-        Me.Cant.MinimumWidth = 6
-        Me.Cant.Name = "Cant"
-        Me.Cant.ReadOnly = True
-        '
-        'Clave
-        '
-        Me.Clave.FillWeight = 108.6229!
-        Me.Clave.HeaderText = "ID/Código"
-        Me.Clave.MinimumWidth = 6
-        Me.Clave.Name = "Clave"
-        Me.Clave.ReadOnly = True
-        '
-        'servicio
-        '
-        Me.servicio.FillWeight = 41.63171!
-        Me.servicio.HeaderText = "S"
-        Me.servicio.Name = "servicio"
-        Me.servicio.ReadOnly = True
-        '
-        'Descripcion
-        '
-        Me.Descripcion.FillWeight = 291.9571!
-        Me.Descripcion.HeaderText = "Descripción"
-        Me.Descripcion.MinimumWidth = 6
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
-        '
-        'Importe
-        '
-        Me.Importe.FillWeight = 83.27744!
-        Me.Importe.HeaderText = "Importe"
-        Me.Importe.MinimumWidth = 6
-        Me.Importe.Name = "Importe"
-        Me.Importe.ReadOnly = True
         '
         'Label10
         '
@@ -422,7 +386,7 @@ Partial Class ConsultaIndividualVenta
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.LblTotal)
-        Me.Panel3.Location = New System.Drawing.Point(424, 392)
+        Me.Panel3.Location = New System.Drawing.Point(424, 410)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(243, 38)
@@ -440,11 +404,72 @@ Partial Class ConsultaIndividualVenta
         Me.LblTotal.Text = "Total: $0.00 MXN"
         Me.LblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'Clave
+        '
+        Me.Clave.FillWeight = 108.6229!
+        Me.Clave.HeaderText = "ID/Código"
+        Me.Clave.MinimumWidth = 6
+        Me.Clave.Name = "Clave"
+        Me.Clave.ReadOnly = True
+        '
+        'servicio
+        '
+        Me.servicio.FillWeight = 41.63171!
+        Me.servicio.HeaderText = "S"
+        Me.servicio.Name = "servicio"
+        Me.servicio.ReadOnly = True
+        '
+        'Descripcion
+        '
+        Me.Descripcion.FillWeight = 291.9571!
+        Me.Descripcion.HeaderText = "Descripción"
+        Me.Descripcion.MinimumWidth = 6
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.ReadOnly = True
+        '
+        'Cant
+        '
+        Me.Cant.FillWeight = 81.94307!
+        Me.Cant.HeaderText = "Cant."
+        Me.Cant.MinimumWidth = 6
+        Me.Cant.Name = "Cant"
+        Me.Cant.ReadOnly = True
+        '
+        'Importe
+        '
+        Me.Importe.FillWeight = 83.27744!
+        Me.Importe.HeaderText = "Importe"
+        Me.Importe.MinimumWidth = 6
+        Me.Importe.Name = "Importe"
+        Me.Importe.ReadOnly = True
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.LblDescuento)
+        Me.Panel4.Location = New System.Drawing.Point(455, 379)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(212, 33)
+        Me.Panel4.TabIndex = 18
+        '
+        'LblDescuento
+        '
+        Me.LblDescuento.Font = New System.Drawing.Font("Century Gothic", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.LblDescuento.ForeColor = System.Drawing.Color.Red
+        Me.LblDescuento.Location = New System.Drawing.Point(4, 5)
+        Me.LblDescuento.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LblDescuento.Name = "LblDescuento"
+        Me.LblDescuento.Size = New System.Drawing.Size(203, 23)
+        Me.LblDescuento.TabIndex = 3
+        Me.LblDescuento.Text = "Descuento: $0.00"
+        Me.LblDescuento.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'ConsultaIndividualVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(680, 450)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.LblComentario)
@@ -465,6 +490,7 @@ Partial Class ConsultaIndividualVenta
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -496,9 +522,11 @@ Partial Class ConsultaIndividualVenta
     Friend WithEvents LblCiudad As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents LblTotal As Label
-    Friend WithEvents Cant As DataGridViewTextBoxColumn
     Friend WithEvents Clave As DataGridViewTextBoxColumn
     Friend WithEvents servicio As DataGridViewTextBoxColumn
     Friend WithEvents Descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents Cant As DataGridViewTextBoxColumn
     Friend WithEvents Importe As DataGridViewTextBoxColumn
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents LblDescuento As Label
 End Class

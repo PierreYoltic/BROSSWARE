@@ -6,7 +6,9 @@
 
     Public Sub AbrirFormInPanel(FormHijo As Object)
         If PanelContenedor.Controls.Count > 0 Then
-            PanelContenedor.Controls.RemoveAt(0)
+            While PanelContenedor.Controls.Count > 0
+                PanelContenedor.Controls.RemoveAt(0)
+            End While
         End If
         fm = FormHijo
         fm.TopLevel = False
@@ -33,5 +35,45 @@
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         AbrirFormInPanel(New ConsultaVenta())
+    End Sub
+
+    Private Sub BtnCompras_Click(sender As Object, e As EventArgs) Handles BtnCompras.Click
+        AbrirFormInPanel(New Compras())
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        AbrirFormInPanel(New ConsultaCompra())
+    End Sub
+
+    Private Sub BtnAjuste_Click(sender As Object, e As EventArgs) Handles BtnAjuste.Click
+        AbrirFormInPanel(New AjusteInventario())
+    End Sub
+
+    Private Sub BtnConsultaAjuste_Click(sender As Object, e As EventArgs) Handles BtnConsultaAjuste.Click
+        AbrirFormInPanel(New ConsultaAjuste())
+    End Sub
+
+    Private Sub ReporteExistencia_Click(sender As Object, e As EventArgs) Handles ReporteExistencia.Click
+        AbrirFormInPanel(New FrmReporteExistencias)
+    End Sub
+
+    Private Sub BtnReporteProveedores_Click(sender As Object, e As EventArgs) Handles BtnReporteProveedores.Click
+        AbrirFormInPanel(New FrmReporteProveedores)
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        AbrirFormInPanel(New FrmReporteClientes)
+    End Sub
+
+    Private Sub BtnBitacora_Click(sender As Object, e As EventArgs) Handles BtnReporteCompraGeneral.Click
+        AbrirFormInPanel(New FrmReporteComprasGeneral())
+    End Sub
+
+    Private Sub BtnBitacora_Click_1(sender As Object, e As EventArgs) Handles BtnBitacora.Click
+        AbrirFormInPanel(New BitacoraErrores())
+    End Sub
+
+    Private Sub BtnComprasArticulo_Click(sender As Object, e As EventArgs) Handles BtnComprasArticulo.Click
+        AbrirFormInPanel(New ReporteComprasArticulos())
     End Sub
 End Class

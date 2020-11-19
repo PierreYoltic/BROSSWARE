@@ -76,6 +76,24 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -120,10 +138,22 @@
     <Compile Include="AddProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AjusteInventario.Designer.vb">
+      <DependentUpon>AjusteInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AjusteInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Articulos.Designer.vb">
       <DependentUpon>Articulos.vb</DependentUpon>
     </Compile>
     <Compile Include="Articulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitacoraErrores.Designer.vb">
+      <DependentUpon>BitacoraErrores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BitacoraErrores.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BuscarArticulo.Designer.vb">
@@ -136,6 +166,12 @@
       <DependentUpon>BuscarCliente.vb</DependentUpon>
     </Compile>
     <Compile Include="BuscarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarProveedor.Designer.vb">
+      <DependentUpon>BuscarProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CantidadArticulo.Designer.vb">
@@ -162,6 +198,30 @@
     <Compile Include="Compras.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ConsultaAjuste.Designer.vb">
+      <DependentUpon>ConsultaAjuste.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaAjuste.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaCompra.Designer.vb">
+      <DependentUpon>ConsultaCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaIndividualAjuste.Designer.vb">
+      <DependentUpon>ConsultaIndividualAjuste.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaIndividualAjuste.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaIndividualCompra.Designer.vb">
+      <DependentUpon>ConsultaIndividualCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaIndividualCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ConsultaIndividualVenta.Designer.vb">
       <DependentUpon>ConsultaIndividualVenta.vb</DependentUpon>
     </Compile>
@@ -172,6 +232,12 @@
       <DependentUpon>ConsultaVenta.vb</DependentUpon>
     </Compile>
     <Compile Include="ConsultaVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarArticuloAjuste.Designer.vb">
+      <DependentUpon>EditarArticuloAjuste.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditarArticuloAjuste.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditarArticuloCompra.Designer.vb">
@@ -217,6 +283,36 @@
     <Compile Include="CambiarImporte.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmReporteClientes.Designer.vb">
+      <DependentUpon>FrmReporteClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteComprasArticulos.Designer.vb">
+      <DependentUpon>FrmReporteComprasArticulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteComprasArticulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteComprasGeneral.Designer.vb">
+      <DependentUpon>FrmReporteComprasGeneral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteComprasGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteExistencias.Designer.vb">
+      <DependentUpon>FrmReporteExistencias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteExistencias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteProveedores.Designer.vb">
+      <DependentUpon>FrmReporteProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -237,6 +333,36 @@
       <DependentUpon>Proveedores.vb</DependentUpon>
     </Compile>
     <Compile Include="Proveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteClientes.Designer.vb">
+      <DependentUpon>ReporteClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteComprasArticulos.Designer.vb">
+      <DependentUpon>ReporteComprasArticulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteComprasArticulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteComprasGeneral.Designer.vb">
+      <DependentUpon>ReporteComprasGeneral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteComprasGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteExistenciaArticulos.Designer.vb">
+      <DependentUpon>ReporteExistenciaArticulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteExistenciaArticulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteProveedores.Designer.vb">
+      <DependentUpon>ReporteProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="taller_refaccionariaDataSet.Designer.vb">
@@ -264,14 +390,23 @@
     <EmbeddedResource Include="AddProveedor.resx">
       <DependentUpon>AddProveedor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AjusteInventario.resx">
+      <DependentUpon>AjusteInventario.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Articulos.resx">
       <DependentUpon>Articulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BitacoraErrores.resx">
+      <DependentUpon>BitacoraErrores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BuscarArticulo.resx">
       <DependentUpon>BuscarArticulo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BuscarCliente.resx">
       <DependentUpon>BuscarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarProveedor.resx">
+      <DependentUpon>BuscarProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CantidadArticulo.resx">
       <DependentUpon>CantidadArticulo.vb</DependentUpon>
@@ -285,11 +420,26 @@
     <EmbeddedResource Include="Compras.resx">
       <DependentUpon>Compras.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaAjuste.resx">
+      <DependentUpon>ConsultaAjuste.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaCompra.resx">
+      <DependentUpon>ConsultaCompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaIndividualAjuste.resx">
+      <DependentUpon>ConsultaIndividualAjuste.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaIndividualCompra.resx">
+      <DependentUpon>ConsultaIndividualCompra.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaIndividualVenta.resx">
       <DependentUpon>ConsultaIndividualVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaVenta.resx">
       <DependentUpon>ConsultaVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarArticuloAjuste.resx">
+      <DependentUpon>EditarArticuloAjuste.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarArticuloCompra.resx">
       <DependentUpon>EditarArticuloCompra.vb</DependentUpon>
@@ -312,6 +462,21 @@
     <EmbeddedResource Include="CambiarImporte.resx">
       <DependentUpon>CambiarImporte.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteClientes.resx">
+      <DependentUpon>FrmReporteClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteComprasArticulos.resx">
+      <DependentUpon>FrmReporteComprasArticulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteComprasGeneral.resx">
+      <DependentUpon>FrmReporteComprasGeneral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteExistencias.resx">
+      <DependentUpon>FrmReporteExistencias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteProveedores.resx">
+      <DependentUpon>FrmReporteProveedores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -320,6 +485,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores.resx">
       <DependentUpon>Proveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteClientes.rdlc" />
+    <EmbeddedResource Include="ReporteClientes.resx">
+      <DependentUpon>ReporteClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteComprasArticulos.rdlc" />
+    <EmbeddedResource Include="ReporteComprasArticulos.resx">
+      <DependentUpon>ReporteComprasArticulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteComprasGeneral.rdlc" />
+    <EmbeddedResource Include="ReporteComprasGeneral.resx">
+      <DependentUpon>ReporteComprasGeneral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteExistenciaArticulos.rdlc" />
+    <EmbeddedResource Include="ReporteExistenciaArticulos.resx">
+      <DependentUpon>ReporteExistenciaArticulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteExistencias.rdlc" />
+    <EmbeddedResource Include="ReporteProveedores.rdlc" />
+    <EmbeddedResource Include="ReporteProveedores.resx">
+      <DependentUpon>ReporteProveedores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.vb</DependentUpon>
@@ -337,6 +523,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="taller_refaccionariaDataSet.xsc">
       <DependentUpon>taller_refaccionariaDataSet.xsd</DependentUpon>
     </None>
@@ -426,6 +613,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\148705-essential-collection\148705-essential-collection\png\222-print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

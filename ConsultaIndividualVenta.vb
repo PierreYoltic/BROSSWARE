@@ -9,7 +9,7 @@ Public Class ConsultaIndividualVenta
         comando = conexion.CreateCommand
 
         Dim venid As Integer = Val(claveVentaSeleccionada)
-        Dim R As String = "SELECT C.nombre, C.rfc, C.domicilio, C.ciudad, C.estado, C.codigoPostal, V.fecha ,V.comentario, V.total " &
+        Dim R As String = "SELECT C.nombre, C.rfc, C.domicilio, C.ciudad, C.estado, C.codigoPostal, V.fecha ,V.comentario, V.total, V.descuento " &
                           "FROM cliente AS C INNER JOIN venta AS V ON V.cli_id = C.cli_id " &
                           "WHERE V.ven_id = " & venid
         comando.CommandText = R
@@ -25,6 +25,7 @@ Public Class ConsultaIndividualVenta
         LblFolio.Text = venid
         LblComentario.Text = lector(7)
         LblTotal.Text = "Total: $" & lector(8) & " MXN"
+        LblDescuento.Text = "Descuento: $" & lector(9)
         lector.Close()
 
         R = "SELECT DS.serv_id, S.descripcion, DS.precio FROM detalleservicio AS DS " &
@@ -34,7 +35,7 @@ Public Class ConsultaIndividualVenta
         comando.CommandText = R
         lector = comando.ExecuteReader
         While lector.Read
-            DataGridViewVenta.Rows.Add("N/A", lector(0), "*", lector(1), lector(2))
+            DataGridViewVenta.Rows.Add(lector(0), "*", lector(1), "N/A", lector(2))
         End While
         lector.Close()
 
@@ -45,13 +46,10 @@ Public Class ConsultaIndividualVenta
         comando.CommandText = R
         lector = comando.ExecuteReader
         While lector.Read
-            DataGridViewVenta.Rows.Add(lector(0), lector(1), "", lector(2), lector(3))
+            DataGridViewVenta.Rows.Add(lector(1), "", lector(2), lector(0), lector(3))
         End While
         lector.Close()
-
-
     End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Dispose()
     End Sub

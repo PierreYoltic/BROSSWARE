@@ -6,11 +6,7 @@ Public Class BuscarArticulo
     Dim comando As New SqlCommand
     Dim lector As SqlDataReader
 
-    Dim Codigo As String
-    Dim Descripcion As String
-    Dim Existencia As Integer
-    Dim Precio As Decimal
-    Dim row As Integer
+    Public row As Integer
 
 
     Private Sub BuscarArticulo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -72,16 +68,27 @@ Public Class BuscarArticulo
                 Me.Dispose()
             Catch ex As Exception
                 Exit Sub
-                Me.Dispose()
             End Try
-
         End If
         Me.Dispose()
     End Sub
 
     Private Sub DataGridViewArticulos_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridViewArticulos.CellMouseDoubleClick
         row = e.RowIndex
-        Me.Close()
+        If opcion = 2 Then
+            Dim FrmArticuloCompra As New EditarArticuloCompra(DataGridViewArticulos.Rows(row).Cells(0).Value, 1, 0, DataGridViewArticulos.Rows(row).Cells(4).Value)
+            FrmArticuloCompra.StartPosition = FormStartPosition.CenterScreen
+            FrmArticuloCompra.Show()
+        ElseIf opcion = 3 Then
+            Dim Frm As AjusteInventario = FormMenu.fm
+            Dim FrmArticuloAjuste As New EditarArticuloAjuste(DataGridViewArticulos.Rows(row).Cells(0).Value,
+                                                              DataGridViewArticulos.Rows(row).Cells(2).Value,
+                                                              DataGridViewArticulos.Rows(row).Cells(3).Value)
+            FrmArticuloAjuste.StartPosition = FormStartPosition.CenterScreen
+            FrmArticuloAjuste.Show()
+        Else
+            Me.Close()
+        End If
     End Sub
 
     Private Sub TxtCodigo_TextChanged(sender As Object, e As EventArgs) Handles TxtCodigo.TextChanged
